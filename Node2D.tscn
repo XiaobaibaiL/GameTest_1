@@ -1,0 +1,40 @@
+[gd_scene load_steps=5 format=3 uid="uid://b4awmds68tblq"]
+
+[ext_resource type="Script" uid="uid://djlkhlsbwjkvm" path="res://Node2d.gd" id="1_wg1v2"]
+[ext_resource type="Script" uid="uid://gxee6sp81c1w" path="res://Botton/button_2.gd" id="2_ol07r"]
+[ext_resource type="Script" uid="uid://d0yqj3thdvl00" path="res://Signal/signal1.gd" id="2_ri2ts"]
+[ext_resource type="Script" uid="uid://bwjh7lxte5f8u" path="res://Botton/button_3.gd" id="3_xtkhq"]
+
+[node name="Node2D" type="Node"]
+script = ExtResource("1_wg1v2")
+
+[node name="Signal1" type="Button" parent="."]
+offset_left = 272.0
+offset_top = 274.0
+offset_right = 408.0
+offset_bottom = 331.0
+text = "Signal1"
+script = ExtResource("2_ri2ts")
+
+[node name="Button1" type="Button" parent="."]
+offset_left = 272.0
+offset_top = 169.0
+offset_right = 408.0
+offset_bottom = 224.0
+text = "button1"
+
+[node name="Button2" type="Button" parent="."]
+offset_left = 505.0
+offset_top = 169.0
+offset_right = 651.0
+offset_bottom = 223.0
+text = "button2"
+script = ExtResource("2_ol07r")
+
+[node name="Button3" type="Button" parent="."]
+offset_left = 716.0
+offset_top = 169.0
+offset_right = 862.0
+offset_bottom = 225.0
+text = "button3"
+script = ExtResource("3_xtkhq")
