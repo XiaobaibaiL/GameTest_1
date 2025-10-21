@@ -32,6 +32,8 @@ shape = SubResource("RectangleShape2D_mjrtp")
 [node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
 texture = ExtResource("1_ojk72")
 
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
+
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]

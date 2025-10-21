@@ -1,28 +1,11 @@
 extends CharacterBody2D
 
-@export var speed = 400;
+@export var speed = 400
 
-var screen_size
+func get_input():
+	var input_direction = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
+	velocity = input_direction * speed
 
-func _ready():
-	screen_size = get_viewport_rect().size
-	
-func _process(delta):
-	var velocity = Vector2.ZERO
-	if Input.is_action_pressed("ui_left"):
-		velocity.x -= 1
-	if Input.is_action_pressed("ui_right"):
-		velocity.x += 1
-	if Input.is_action_pressed("ui_up"):
-		velocity.y -= 1
-	if Input.is_action_pressed("ui_down"):
-		velocity.y += 1
-		
-	if velocity.length() <= 0:
-		return
-		
-	velocity = velocity.normalized() * speed
-	position += velocity * delta
-	position.x = clamp(position.x,0,screen_size.x)
-	position.y = clamp(position.y,0,screen_size.y)
-	
+func _physics_process(delta):
+	get_input()
+	move_and_slide()
