@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://cygst0nh4jsfg"]
+
+[ext_resource type="Script" uid="uid://c33qf0cjojfys" path="res://Line2D/line_2d.gd" id="1_o153k"]
+[ext_resource type="Texture2D" uid="uid://0ii0g4nqe5qr" path="res://icon.svg" id="2_r5dk7"]
+[ext_resource type="Script" uid="uid://cip5lvpsak2pr" path="res://Line2D/player.gd" id="3_r5dk7"]
+
+[sub_resource type="Curve" id="Curve_r25p6"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.3478261, 0.3370787), 0.0, 0.0, 0, 0, Vector2(0.61413044, 0.59550565), 0.0, 0.0, 0, 0, Vector2(0.7554348, 0.7415731), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 5
+
+[node name="Line2d" type="Node"]
+
+[node name="Line2D" type="Line2D" parent="."]
+width = 60.0
+width_curve = SubResource("Curve_r25p6")
+default_color = Color(0.7788761, 0.6834946, 0.3548167, 1)
+script = ExtResource("1_o153k")
+
+[node name="Player" type="Sprite2D" parent="."]
+position = Vector2(32, 32)
+scale = Vector2(0.48828125, 0.4921875)
+texture = ExtResource("2_r5dk7")
+script = ExtResource("3_r5dk7")
