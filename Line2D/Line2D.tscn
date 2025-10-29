@@ -13,7 +13,7 @@ point_count = 5
 [node name="Line2D" type="Line2D" parent="."]
 width = 60.0
 width_curve = SubResource("Curve_r25p6")
-default_color = Color(0.7788761, 0.6834946, 0.3548167, 1)
+default_color = Color(0.22745098, 0.2901961, 0.9137255, 1)
 script = ExtResource("1_o153k")
 
 [node name="Player" type="Sprite2D" parent="."]
