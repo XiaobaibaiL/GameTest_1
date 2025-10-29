@@ -18,6 +18,9 @@ script = ExtResource("1_o153k")
 
 [node name="Player" type="Sprite2D" parent="."]
 position = Vector2(32, 32)
-scale = Vector2(0.48828125, 0.4921875)
+scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_r5dk7")
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="."]
+remote_path = NodePath("../Player")
 script = ExtResource("3_r5dk7")

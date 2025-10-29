@@ -1,0 +1,61 @@
+[gd_scene load_steps=7 format=3 uid="uid://usckhqga7bfm"]
+
+[ext_resource type="Script" uid="uid://mw8us3bu8ym7" path="res://Path2D/path_follow_2d.gd" id="1_clu60"]
+[ext_resource type="Script" uid="uid://bjr7tui48n4gk" path="res://Path2D/line_2d.gd" id="1_s3unl"]
+[ext_resource type="Texture2D" uid="uid://0ii0g4nqe5qr" path="res://icon.svg" id="2_jshi0"]
+
+[sub_resource type="Curve" id="Curve_jshi0"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve2D" id="Curve2D_s3unl"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 128, 208, 0, 0, 0, 0, 280, 96, 0, 0, 0, 0, 496, 56, 0, 0, 0, 0, 848, 128, 0, 0, 0, 0, 984, 48, 0, 0, 0, 0, 1128, 224)
+}
+point_count = 6
+
+[sub_resource type="Curve2D" id="Curve2D_jshi0"]
+_data = {
+"points": PackedVector2Array(-29, 114, 29, -114, 96, 432, -181, -1, 181, 1, 656, 296, -47, -35, 47, 35, 912, 376, 39, -78, -39, 78, 1000, 560, 77, 4, -77, -4, 720, 616, -38, 149, 38, -149, 96, 432)
+}
+point_count = 6
+
+[node name="Path2d" type="Node2D"]
+
+[node name="Line2D" type="Line2D" parent="."]
+width = 64.0
+width_curve = SubResource("Curve_jshi0")
+default_color = Color(1, 0.13333334, 1, 1)
+script = ExtResource("1_s3unl")
+
+[node name="Player" type="Sprite2D" parent="."]
+position = Vector2(96, 432)
+rotation = -1.321694
+texture = ExtResource("2_jshi0")
+
+[node name="Player2" type="Sprite2D" parent="."]
+position = Vector2(96, 432)
+rotation = -1.321694
+texture = ExtResource("2_jshi0")
+
+[node name="Path2D" type="Path2D" parent="."]
+curve = SubResource("Curve2D_s3unl")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
+position = Vector2(128, 208)
+rotation = -0.6350267
+script = ExtResource("1_clu60")
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Path2D/PathFollow2D"]
+remote_path = NodePath("../../../Player")
+
+[node name="Path2D2" type="Path2D" parent="."]
+curve = SubResource("Curve2D_jshi0")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D2"]
+position = Vector2(96, 432)
+rotation = -1.321694
+script = ExtResource("1_clu60")
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Path2D2/PathFollow2D"]
+remote_path = NodePath("../../../Player2")
