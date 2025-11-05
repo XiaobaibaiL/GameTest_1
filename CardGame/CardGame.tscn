@@ -1,0 +1,53 @@
+[gd_scene load_steps=3 format=3 uid="uid://uvhh2cl1mmu1"]
+
+[ext_resource type="Script" uid="uid://bpe8g3bt6oaxq" path="res://CardGame/card_game.gd" id="1_3oauo"]
+[ext_resource type="Script" uid="uid://b8dg2ptg0ojcs" path="res://CardGame/hand.gd" id="1_q1upd"]
+
+[node name="CardGame" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_3oauo")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+color = Color(0.24705882, 0.70980394, 1, 1)
+
+[node name="Hand" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 210.0
+offset_top = 740.0
+offset_right = 1710.0
+offset_bottom = 1080.0
+pivot_offset = Vector2(750, 340)
+color = Color(0.5803922, 0.89411765, 1, 1)
+script = ExtResource("1_q1upd")
+max_rotation_degress = null
+x_sep = null
+y_min = null
+y_max = null
+
+[node name="Draw_a_card" type="Button" parent="."]
+layout_mode = 0
+offset_left = 200.0
+offset_top = 70.0
+offset_right = 320.0
+offset_bottom = 130.0
+text = "抽卡"
+
+[node name="Discard" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1600.0
+offset_top = 70.0
+offset_right = 1720.0
+offset_bottom = 130.0
+text = "弃牌"
+
+[node name="Restart" type="Button" parent="."]
+layout_mode = 0
+offset_left = 900.0
+offset_top = 70.0
+offset_right = 1020.0
+offset_bottom = 130.0
+text = "重新加载"
