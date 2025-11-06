@@ -19,7 +19,16 @@ func darw():
 	var new_card = CARD.instantiate()
 	new_card.text = "卡牌 %s" %(get_child_count() + 1)
 	add_child(new_card)
-	_updata_cards()
+	_update_cards()
 	
 func discard():
-	pass
+	if get_child_count() < 1:
+		return
+	
+	var child := get_child(-1)
+	child.reparent(get_tree().root)
+	child.queue_free()
+	_update_cards()
+	
+func _update_cards():
+	print("更新卡牌")
