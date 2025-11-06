@@ -1,7 +1,16 @@
-[gd_scene load_steps=3 format=3 uid="uid://uvhh2cl1mmu1"]
+[gd_scene load_steps=5 format=3 uid="uid://uvhh2cl1mmu1"]
 
 [ext_resource type="Script" uid="uid://bpe8g3bt6oaxq" path="res://CardGame/card_game.gd" id="1_3oauo"]
 [ext_resource type="Script" uid="uid://b8dg2ptg0ojcs" path="res://CardGame/hand.gd" id="1_q1upd"]
+
+[sub_resource type="Curve" id="Curve_3oauo"]
+_data = [Vector2(0, 0), 0.0, 5.0, 0, 0, Vector2(0.5, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), -5.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Curve" id="Curve_agf24"]
+_limits = [-1.0, 1.0, 0.0, 1.0]
+_data = [Vector2(0, -1), 0.0, 5.0, 0, 0, Vector2(0.5, 1.4901161e-08), 0.0, 0.0, 0, 0, Vector2(1, 1), 5.0, 0.0, 0, 0]
+point_count = 3
 
 [node name="CardGame" type="Control"]
 layout_mode = 3
@@ -23,6 +32,8 @@ offset_bottom = 1080.0
 pivot_offset = Vector2(750, 340)
 color = Color(0.5803922, 0.89411765, 1, 1)
 script = ExtResource("1_q1upd")
+hand_curvc = SubResource("Curve_3oauo")
+rotation_curvc = SubResource("Curve_agf24")
 
 [node name="Draw_a_card" type="Button" parent="."]
 layout_mode = 0
